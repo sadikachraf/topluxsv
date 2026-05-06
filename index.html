@@ -1230,7 +1230,17 @@
     }
 
     firePurchase(pkg);
-    window.scrollTo({top:document.getElementById(isPdp?'pdp':'objednat').offsetTop-80,behavior:'smooth'});
+
+    // Center the thank-you message on mobile/desktop after the success block appears.
+    // This avoids scrolling only to the section top, which can leave the message too high or partly off-screen.
+    const successEl = document.getElementById(isPdp ? 'pdp-success' : 'success-box');
+    setTimeout(()=>{
+      if(successEl){
+        const rect = successEl.getBoundingClientRect();
+        const targetTop = window.pageYOffset + rect.top - Math.max(70, (window.innerHeight - rect.height) / 2);
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+      }
+    }, 80);
   }
 
   /* ── COUNTDOWN ───────────────────────────────────────────── */
