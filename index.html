@@ -1161,8 +1161,7 @@
   function firePurchase(p){
     if(typeof fbq!=='undefined') fbq('track','Purchase',{value:p.price,currency:'EUR',content_ids:[p.sku],content_type:'product',num_items:p.quantity});
     if(typeof ttq!=='undefined'){
-      ttq.track('PlaceAnOrder',{value:p.price,currency:'EUR',content_id:p.sku,quantity:p.quantity});
-      ttq.track('CompletePayment',{value:p.price,currency:'EUR',content_id:p.sku,quantity:p.quantity,content_type:'product'});
+      ttq.track('Purchase',{value:p.price,currency:'EUR',content_id:p.sku,quantity:p.quantity,content_type:'product'});
     }
     if(typeof gtag!=='undefined') gtag('event','conversion',{send_to:'AW-XXXXXXX/LABEL',value:p.price,currency:'EUR',transaction_id:'TLX-'+Date.now()});
   }
