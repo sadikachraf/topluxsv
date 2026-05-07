@@ -614,7 +614,7 @@
             <input type="text" id="p-name" placeholder="Meno a priezvisko *" autocomplete="name">
             <input type="tel" id="p-phone" placeholder="Telefón * (+421...)" autocomplete="tel">
           </div>
-          <input type="email" id="p-email" placeholder="Email *" autocomplete="email">
+          <input type="email" id="p-email" placeholder="Email (voliteľné)" autocomplete="email">
           <input type="text" id="p-street" placeholder="Ulica a číslo domu *" autocomplete="street-address">
           <div class="pdp-row-2">
             <input type="text" id="p-city" placeholder="Mesto *" autocomplete="address-level2">
@@ -1039,7 +1039,7 @@
         <p class="form-step-lbl">2. Vaše kontaktné údaje:</p>
         <div class="fg"><label for="f-name">Meno a priezvisko *</label><input type="text" id="f-name" placeholder="Jana Nováková" autocomplete="name"></div>
         <div class="fg"><label for="f-phone">Telefónne číslo * <span style="font-weight:400;color:var(--muted)">(zavoláme pre potvrdenie)</span></label><input type="tel" id="f-phone" placeholder="+421 9XX XXX XXX" autocomplete="tel"></div>
-        <div class="fg"><label for="f-email">Email *</label><input type="email" id="f-email" placeholder="jana@email.sk" autocomplete="email"></div>
+        <div class="fg"><label for="f-email">Email <span style="font-weight:400;color:var(--muted)">(voliteľné)</span></label><input type="email" id="f-email" placeholder="jana@email.sk" autocomplete="email"></div>
         <hr class="form-div">
         <p class="form-step-lbl">3. Adresa doručenia:</p>
         <div class="fg"><label for="f-street">Ulica a číslo domu *</label><input type="text" id="f-street" placeholder="Hlavná 15" autocomplete="street-address"></div>
@@ -1174,7 +1174,6 @@
     const fields=[
       {id:prefix+'-name', label:'Meno a priezvisko'},
       {id:prefix+'-phone',label:'Telefónne číslo'},
-      {id:prefix+'-email',label:'Email'},
       {id:prefix+'-street',label:'Ulica a číslo domu'},
       {id:prefix+'-city', label:'Mesto'},
       {id:prefix+'-zip',  label:'PSČ'},
